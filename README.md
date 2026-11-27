@@ -32,13 +32,18 @@ monitor per repository (or `M-x magit-autorefresh-enable-fsmonitor`):
 
 ## Setup
 
+With Emacs 30+ (`use-package` with built-in `package-vc` support):
+
 ```elisp
 (use-package magit-autorefresh
   :ensure nil
-  :load-path "~/git/magit-autorefresh"
+  :vc (:url "https://github.com/TatuLahtela/magit-autorefresh" :rev :newest)
   :after magit
   :config (magit-autorefresh-mode 1))
 ```
+
+Or install manually with
+`M-x package-vc-install RET https://github.com/TatuLahtela/magit-autorefresh RET`.
 
 ## Development
 
